@@ -1,0 +1,27 @@
+{
+    "KeySchema": [
+        {
+            "KeyType": "HASH", 
+            "AttributeName": "id"
+        }, 
+        {
+            "KeyType": "RANGE", 
+            "AttributeName": "color"
+        }
+    ], 
+    "TableName": "Car", 
+    "AttributeDefinitions": [
+        {
+            "AttributeName": "id", 
+            "AttributeType": "N"
+        }, 
+        {
+            "AttributeName": "color", 
+            "AttributeType": "S"
+        }
+    ], 
+    "ProvisionedThroughput": {
+        "WriteCapacityUnits": 5, 
+        "ReadCapacityUnits": 5
+    }
+}
