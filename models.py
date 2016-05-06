@@ -84,6 +84,6 @@ if __name__ == '__main__':
 	cameras = Camera.query(title__net='2005') # ne | <> => not equal to. 
 	cameras = Camera.query(title__not_exists='2005') # not_exists
 	cameras = Camera.query(title__ne='2005') # ne | <> => not equal to. 
-	cameras = Camera.query(size(year)<>='2010') # size => size(Brand) <= :v_sub
+	cameras = Camera.query(title__size__gt|gte|lt|lte|eq='2010') # size => size(Brand) <= :v_sub
 	'''
 
