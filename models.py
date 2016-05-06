@@ -44,15 +44,46 @@ if __name__ == '__main__':
 	cameras = Camera.query(year=2005)
 	print(cameras)
 	'''
-	cameras = Camera.query(year='>2005')
-	cameras = Camera.query(year='=>2005')
-	cameras = Camera.query(year='<2005')
-	cameras = Camera.query(year='<=2005')
-	cameras = Camera.query(year='2005')
-	cameras = Camera.query(year='>2005')
-	cameras = Camera.query(year='>2005')
-	cameras = Camera.query(year='>2005')
-	cameras = Camera.query(year='>2005')
+	Key logical operators:
+	cameras = Camera.query(year='2005') # EQ
+	cameras = Camera.query(year__equal_to='2005') # 
+	cameras = Camera.query(year='>2005') # GT
+	cameras = Camera.query(year__gt='2005') # 
+	cameras = Camera.query(year='=>2005') # GTE
+	cameras = Camera.query(year__gte='2005') # 
+	cameras = Camera.query(year='<2005') # LT
+	cameras = Camera.query(year__lt='2005') # 
+	cameras = Camera.query(year='<=2005') # LTE
+	cameras = Camera.query(year__lte='2005') # 
+	cameras = Camera.query(year=('2005', '2007')) # between
+	cameras = Camera.query(year__between=('2005', '2007')) #
+	cameras = Camera.query(year__between='2005, 2007') #
+	cameras = Camera.query(year__begins_with='20') # begins_with
+
+	Attribute logical operators:
+	cameras = Camera.query(title='2005') # EQ
+	cameras = Camera.query(title__equal_to='2005') # 
+	cameras = Camera.query(title='>2005') # GT
+	cameras = Camera.query(title__gt='2005') # 
+	cameras = Camera.query(title='=>2005') # GTE
+	cameras = Camera.query(title__gte='2005') # 
+	cameras = Camera.query(title='<2005') # LT
+	cameras = Camera.query(title__lt='2005') # 
+	cameras = Camera.query(title='<=2005') # LTE
+	cameras = Camera.query(title__lte='2005') # 
+	cameras = Camera.query(title=('2005', '2007')) # between
+	cameras = Camera.query(title__between=('2005', '2007')) #
+	cameras = Camera.query(title='2005, 2007') #
+	cameras = Camera.query(title__begins_with='20') # begins_with
+	cameras = Camera.query(title__attribute_type='2005') # attribute_type
+	cameras = Camera.query(title__contains='2005') # contains
+	cameras = Camera.query(title__exists='2005') # exists
+	cameras = Camera.query(title_is_in=['2005']) # is_in, :type param: `list`
+	cameras = Camera.query(title__!='2005') # ne | <> => not equal to. 
+	cameras = Camera.query(title__not_equal_to='2005') # ne | <> => not equal to. 
+	cameras = Camera.query(title__net='2005') # ne | <> => not equal to. 
+	cameras = Camera.query(title__not_exists='2005') # not_exists
+	cameras = Camera.query(title__ne='2005') # ne | <> => not equal to. 
+	cameras = Camera.query(size(year)<>='2010') # size => size(Brand) <= :v_sub
 	'''
-	#cameras = Camera.query(year='2005') BEGINS_WITH
-	#cameras = Camera.query(year='>2005') BETWEEN
+
